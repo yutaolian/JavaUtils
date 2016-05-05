@@ -1,4 +1,4 @@
-package dev.lyt.utils.date;
+package dev.lyt.utils.dateUtils;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

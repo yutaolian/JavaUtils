@@ -1,7 +1,6 @@
-package dev.lyt.utils.md5;
+package dev.lyt.utils.md5Utils;
 
 import java.security.MessageDigest;
-import java.util.Random;
 
 /**
  * MD5加密
@@ -38,24 +37,8 @@ public class MD5Util {
             e.printStackTrace();
             return null;
         }
-    }
 	
-	/**
-	 * 产生一个六位数的随机数
-	 * @return
-	 */
-	
-	public final static int getRandom(){
-		
-		Random rand = new Random(); 
-		
-		final int min = 100000 ;
-		
-		final int max = 999999;
-		
-		return Math.abs(rand.nextInt()) % (max - min + 1) + min;
-
-	}
+}
 	
 	public static void main(String[] args){
 		

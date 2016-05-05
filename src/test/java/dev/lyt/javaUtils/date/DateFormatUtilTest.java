@@ -5,9 +5,9 @@ import java.util.Date;
 import org.apache.commons.lang3.time.FastDateFormat;
 import org.junit.Test;
 
-import dev.lyt.utils.date.DateFormatUtil;
-import dev.lyt.utils.date.DateFormatUtil2;
-import dev.lyt.utils.date.DateFormatUtil3;
+import dev.lyt.utils.dateUtils.DateFormatUtil;
+import dev.lyt.utils.dateUtils.DateFormatUtil2;
+import dev.lyt.utils.dateUtils.DateFormatUtil3;
 import junit.framework.TestCase;
 
 public class DateFormatUtilTest extends TestCase {

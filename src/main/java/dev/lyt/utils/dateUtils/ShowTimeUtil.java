@@ -1,8 +1,13 @@
-package dev.lyt.utils.date;
+package dev.lyt.utils.dateUtils;
 
 import java.text.ParseException;
 import java.util.Date;
 
+/**
+ * 显示类似微信的格式化时间
+ * @author lyt
+ *
+ */
 public class ShowTimeUtil {
 	
 	
