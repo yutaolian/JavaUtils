@@ -1,19 +1,21 @@
-package dev.lyt.javaUtils.date;
+package dev.lyt.utils.date;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.concurrent.ExecutionException;
+
+import org.apache.commons.lang3.time.FastDateFormat;
 
 /**
  * 
+ * 格式化时间 Util(将SimpleDateFormat作为方法内部的变量)
  * @author lianyutao
  *
  */
 public class DateFormatUtil {
 	
 	
-	private static final String FORMAT_STRING_LONG = "yyyy-MM-dd HH:mm:ss";
-	private static final String FORMAT_STRING_SHORT = "yyyy-MM-dd";
+	private static final String DATE_TIME_STRING = "yyyy-MM-dd HH:mm:ss";
+	private static final String DATE_STRING = "yyyy-MM-dd";
 	
 	/**
 	 * 时间转为字符串  自定义格式化时间
@@ -44,8 +46,8 @@ public class DateFormatUtil {
 	 * @param Date date
 	 * @return "yyyy-MM-dd"
 	 */
-	public static String DateToStringShortDate(Date date) throws Exception{
-		return DateToString(date, FORMAT_STRING_SHORT);
+	public static String DateToString(Date date) throws Exception{
+		return DateToString(date, DATE_STRING);
 	}
 	
 	/**
@@ -53,8 +55,8 @@ public class DateFormatUtil {
 	 * @param date
 	 * @return "yyyy-MM-dd HH:mm:ss"
 	 */
-	public static String DateToStringLongDate(Date date) throws Exception{
-		return DateToString(date, FORMAT_STRING_LONG);
+	public static String DateTimeToString(Date date) throws Exception{
+		return DateToString(date, DATE_TIME_STRING);
 	}
 	
 	/**
@@ -64,7 +66,7 @@ public class DateFormatUtil {
 	 * @throws Exception
 	 */
 	public static Date StringToDate(String dateString) throws Exception{
-		return StringToDate(dateString, FORMAT_STRING_SHORT);
+		return StringToDate(dateString, DATE_STRING);
 	}
 	
 	/**
@@ -73,8 +75,10 @@ public class DateFormatUtil {
 	 * @return Date date
 	 * @throws Exception
 	 */
-	public static Date LongStringToDate(String dateString) throws Exception{
-		return StringToDate(dateString, FORMAT_STRING_LONG);
+	public static Date StringToDateTime(String dateString) throws Exception{
+		return StringToDate(dateString, DATE_TIME_STRING);
 	}
+	
+
 
 }
