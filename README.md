@@ -66,29 +66,31 @@
 ####方法3.使用ThreadLocal（推荐使用）线程只会创建一个SimpleDateFormat实例。其他线程用的是这个线程的副本，实现方法如下
 
 		/**
-	 * ThreadLocal的实现
-	 */
-	private static ThreadLocal<DateFormat> dateThreadLocal = new ThreadLocal<DateFormat>(){
-		protected DateFormat initialValue() {
-			return new SimpleDateFormat(DATE_STRING);
+		 * ThreadLocal的实现
+		 */
+		private static ThreadLocal<DateFormat> dateThreadLocal = new ThreadLocal<DateFormat>(){
+			protected DateFormat initialValue() {
+				return new SimpleDateFormat(DATE_STRING);
+			};
 		};
-	};
-	/**
-	 * ThreadLocal例外一种实现方法 
-	 */
-    private static ThreadLocal<DateFormat> threadLocal = new ThreadLocal<DateFormat>(); 
-    
-    public static DateFormat getDateFormat()   
-    {  
-        DateFormat dateFormat = threadLocal.get();  
-        //ThreadLocal 的实现是原理是map
-        if(dateFormat==null){  
-        	dateFormat = new SimpleDateFormat(DATE_STRING);  
-        	//这里需要设置
-            threadLocal.set(dateFormat);  
-        }  
-        return dateFormat;  
-    }  
+		
+		
+		/**
+		 * ThreadLocal例外一种实现方法 
+		 */
+	    private static ThreadLocal<DateFormat> threadLocal = new ThreadLocal<DateFormat>(); 
+	    
+	    public static DateFormat getDateFormat()   
+	    {  
+	        DateFormat dateFormat = threadLocal.get();  
+	        //ThreadLocal 的实现是原理是map
+	        if(dateFormat==null){  
+	        	dateFormat = new SimpleDateFormat(DATE_STRING);  
+	        	//这里需要设置
+	            threadLocal.set(dateFormat);  
+	        }  
+	        return dateFormat;  
+	    }  
 
 [完整代码](/src/main/java/dev/lyt/utils/date/DateFormatUtil3.java)	
 

@@ -52,7 +52,7 @@ public class ShowTimeUtil {
 			return hours + "小时前";
 		} else if (hours < 24 * 2) {
 			return "1天前";
-		} else if (days < 7) {//一周以内
+		} else if (days < 7) {
 			return days + "天前";
 		} else {
 			return DateFormatUtil3.DateTimeToString(date);
