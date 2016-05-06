@@ -3,8 +3,6 @@ package dev.lyt.utils.dateUtils;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import org.apache.commons.lang3.time.FastDateFormat;
-
 /**
  * 
  * 格式化时间 Util(将SimpleDateFormat作为方法内部的变量)
