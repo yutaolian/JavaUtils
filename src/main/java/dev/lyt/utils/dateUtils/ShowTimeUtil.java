@@ -10,7 +10,12 @@ import java.util.Date;
  */
 public class ShowTimeUtil {
 	
-	
+	/**
+	 * 根据时间字符串格式化时间
+	 * @param dateString
+	 * @return
+	 * @throws ParseException
+	 */
 	public static String ShowTime(String dateString) throws ParseException {
 		Date date = DateFormatUtil3.StringToDateTime(dateString);
 		long timeStamp = date.getTime();
@@ -24,6 +29,12 @@ public class ShowTimeUtil {
 		return calculateTime(currentTimeStamp, timeStamp ,date);
 	}
 	
+	/**
+	 * 根据Date格式化时间
+	 * @param date
+	 * @return
+	 * @throws ParseException
+	 */
 	public static String ShowTime(Date date) throws ParseException {
 		long timeStamp = date.getTime();
 
@@ -36,6 +47,14 @@ public class ShowTimeUtil {
 		return calculateTime(currentTimeStamp, timeStamp,date);
 	}
 	
+	/**
+	 * 计算时间
+	 * @param currentTimeStamp
+	 * @param timeStamp
+	 * @param date
+	 * @return
+	 * @throws ParseException
+	 */
 	private static String calculateTime(long currentTimeStamp,long timeStamp,Date date) throws ParseException{
 		
 		long seconds = (currentTimeStamp - timeStamp) / 1000;
